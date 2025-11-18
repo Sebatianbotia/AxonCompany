@@ -1,0 +1,309 @@
+/* --- Variables y Colores --- */
+:root {
+    --primary-bg: #0A192F;
+    --accent-gradient: linear-gradient(135deg, #FFC107, #FFA000);
+    --accent-color: #FFC107;
+    --text-light: #E6F1FF;
+    --text-secondary: #A8B2D1;
+    --card-bg: #112240;
+    --font-primary: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--primary-bg);
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 100px 0;
+}
+
+.reveal {
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 0.2s ease-in;
+}
+
+.reveal.active {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.section-title {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 60px auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background: var(--accent-gradient);
+    font-weight: 700;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #000;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    background-color: rgba(10,25,47,0.85);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: .3s;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+}
+
+.hamburger {
+    display: none;
+}
+
+#hero {
+  position: relative;        
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;          
+
+}
+
+#hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;                 
+  background-image: url("/axonBakground.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;  
+transform: rotate(90deg) scale(1.1); 
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 0;                 
+}
+
+#hero > * { position: relative; z-index: 1; }
+
+.hero-content {
+    max-width: 750px;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+#clients {
+    padding: 40px 0;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.clients-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.clients-grid img {
+    border-radius: 7px;
+    width: 100px;
+    height: auto;
+    opacity: .6;
+    transition: .3s;
+    margin-bottom: 10px;
+}
+
+
+.clients__card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.clients__imgContent{
+    height: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.clients__card a{
+   text-decoration: none;
+   background-color: var(--accent-color);
+   padding: 5px;
+   border-radius: 8px;
+   
+}
+
+.clients-grid img:hover {
+    opacity: 1;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 8px;
+    border-top: 4px solid var(--accent-color);
+    transition: .3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmin(250px,1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.step-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+#cta {
+    background: var(--card-bg);
+    padding: 80px;
+    text-align: center;
+    border-radius: 10px;
+    
+}
+
+.cta__pharagraph{
+    color: var(--text-secondary);
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.footer {
+    padding: 50px 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 80px;
+        background-color: var(--primary-bg);
+        width: 100%;
+        text-align: center;
+        flex-direction: column;
+        height: 100vh;
+        gap: 30px;
+        transition: .3s;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hamburger {
+        display: flex;
+        cursor: pointer;
+        flex-direction: column;
+    }
+
+    .hamburger .bar {
+        width: 25px;
+        height: 3px;
+        margin: 5px;
+        background: var(--text-light);
+        transition: .3s;
+    }
+
+    #cta {
+        padding: 40px 20px;
+    }
+    #hero {
+    position: relative;
+    overflow: hidden;     /* <- aquí, no en el ::before */
+  }
+
+  #hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;             /* top/right/bottom/left: 0 */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; /* o 'cover' si prefieres llenar */
+    width: 100%;          /* evita 100vw para no generar scroll horizontal */
+    height: 100%;
+    pointer-events: none;
+transform: rotate(90deg); 
+
+  }
+
+  /* Guarda de última instancia si otro elemento desborda */
+  html, body { overflow-x: hidden; }
+}
+
+
