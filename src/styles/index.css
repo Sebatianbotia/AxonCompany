@@ -471,20 +471,29 @@ transform: rotate(90deg);
     grid-template-columns: 1fr;
     gap: 20px;
   }
-    .about-overlay {
-    align-items: flex-start;   /* el panel baja en lugar de quedar centrado */
-    padding-top: 70px;         /* espacio para la barra de Chrome */
+  .about-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;     /* <- mueve el modal hacia ABAJO */
+    padding-top: 90px !important; /* <- espacio suficiente para la barra */
+    z-index: 9999;
   }
 
   .about-panel {
-    margin-top: 0;
+    margin-top: 0 !important;
+    width: 92%;
+    max-width: 92%;
+    padding: 30px 20px !important;
     border-radius: 12px;
   }
 
   .about-close {
-    top: 20px;    /* baja el botón */
-    right: 20px;
-    z-index: 999999; /* para garantizar que sea clickeable */
+    top: 25px !important;
+    right: 20px !important;
+    font-size: 2.5rem;
+    z-index: 999999;  /* evita que quede debajo de la barra */
   }
 
   .about-card {
