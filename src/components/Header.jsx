@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Header = () => {
+const Header = ({onOpenAbout}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -29,10 +29,11 @@ const Header = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a href="#about" className="nav-link" onClick={closeMenu}>
+            <a className="nav-link" href= "#" onClick={() => { closeMenu(); onOpenAbout(); }}>
               Nosotros
             </a>
           </li>
+
           <li className="nav-item">
             <a target="_blank" rel="noopener noreferrer" href="https://wa.me/573014810079" className="nav-link btn" onClick={closeMenu}>
               Contactar

@@ -1,10 +1,12 @@
-import React from 'react';
-
-const Footer = () => {
+const Footer = ({ onOpenAbout }) => {
   return (
     <footer className="footer">
-      <div className="container">
+      <div className="container footer__bottom">
         <p>&copy; 2025 Axon Company. Conectando ideas, construyendo futuro.</p>
+
+        <a className="footer__link" onClick={onOpenAbout}>
+          Sobre nosotros
+        </a>
       </div>
     </footer>
   );

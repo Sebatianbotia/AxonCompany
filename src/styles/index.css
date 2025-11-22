@@ -203,6 +203,51 @@ transform: rotate(90deg) scale(1.1);
     gap: 30px;
 }
 
+.client-card:hover {
+  transform: translateY(-5px);
+}
+
+.client-img img {
+  width: 120px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.client-img img:hover {
+  opacity: 1;
+}
+
+.client-name {
+  font-size: 1.3rem;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.client-desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.client-btn {
+  display: inline-block;
+  background: var(--accent-gradient);
+  padding: 10px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
+  transition: .3s;
+}
+
+.client-btn:hover {
+  transform: translateY(-3px);
+}
+
 .service-card {
     background-color: var(--card-bg);
     padding: 40px;
@@ -247,6 +292,105 @@ transform: rotate(90deg) scale(1.1);
     padding: 50px 0;
     text-align: center;
 }
+.footer__bottom {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.footer__link {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.footer__link:hover {
+    opacity: 0.8;
+}
+
+
+.about-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.about-panel {
+  background: var(--card-bg);
+  padding: 50px;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 90%;
+  position: relative;
+  animation: fadeUp .35s ease-out;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.about-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 2rem;
+  color: var(--text-light);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.about-title {
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.about-desc {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+}
+
+.about-logo img {
+  width: 110px;
+  opacity: 0.7;
+  margin: 0 auto 20px auto;
+  display: block;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+}
+
+.about-card {
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 10px;
+  border-top: 3px solid var(--accent-color);
+}
+
+.about-card h3 {
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.about-card p,
+.about-card li {
+  color: var(--text-secondary);
+}
 
 @media (max-width: 768px) {
     .nav-menu {
@@ -285,25 +429,100 @@ transform: rotate(90deg) scale(1.1);
     }
     #hero {
     position: relative;
-    overflow: hidden;     /* <- aquí, no en el ::before */
+    overflow: hidden;  
   }
 
   #hero::before {
     content: "";
     position: absolute;
-    inset: 0;             /* top/right/bottom/left: 0 */
+    inset: 0;             
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain; /* o 'cover' si prefieres llenar */
-    width: 100%;          /* evita 100vw para no generar scroll horizontal */
+    background-size: contain; 
+    width: 100%;         
     height: 100%;
     pointer-events: none;
 transform: rotate(90deg); 
 
   }
+    .about-panel {
+    padding: 30px 20px;
+    width: 92%;
+    max-width: 95%;
+  }
 
-  /* Guarda de última instancia si otro elemento desborda */
+  .about-title {
+    font-size: 1.7rem;
+  }
+
+  .about-desc {
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+  }
+
+  .about-logo img {
+    width: 80px;
+    margin-bottom: 15px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-card {
+    padding: 20px;
+  }
+
+  .about-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .about-card p,
+  .about-card li {
+    font-size: 0.9rem;
+  }
+
+  .about-close {
+    font-size: 2.2rem;
+    top: 10px;
+    right: 10px;
+  }
+
+    .client-card {
+    padding: 20px;
+  }
+  .client-img img {
+    width: 100px;
+  }
+  .client-name {
+    font-size: 1.1rem;
+  }
+  .client-desc {
+    font-size: 0.9rem;
+  }
+  
   html, body { overflow-x: hidden; }
 }
+
+
+
+.client-card {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 10px;
+  border-top: 4px solid var(--accent-color);
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+  transition: .3s ease;
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+
+}
+
 
 
