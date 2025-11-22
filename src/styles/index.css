@@ -471,6 +471,21 @@ transform: rotate(90deg);
     grid-template-columns: 1fr;
     gap: 20px;
   }
+    .about-overlay {
+    align-items: flex-start;   /* el panel baja en lugar de quedar centrado */
+    padding-top: 70px;         /* espacio para la barra de Chrome */
+  }
+
+  .about-panel {
+    margin-top: 0;
+    border-radius: 12px;
+  }
+
+  .about-close {
+    top: 20px;    /* baja el botón */
+    right: 20px;
+    z-index: 999999; /* para garantizar que sea clickeable */
+  }
 
   .about-card {
     padding: 20px;
@@ -519,12 +534,6 @@ transform: rotate(90deg);
   transition: .3s ease;
 }
 
-
-
-/* Responsive */
-@media (max-width: 768px) {
-
-}
 
 
 
