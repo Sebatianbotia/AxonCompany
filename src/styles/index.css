@@ -448,7 +448,8 @@ transform: rotate(90deg);
     .about-panel {
     padding: 30px 20px;
     width: 92%;
-    max-width: 95%;
+    max-width: 92%;
+    max-height: fit-content;
   }
 
   .about-title {
