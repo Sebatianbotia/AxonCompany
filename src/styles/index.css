@@ -392,6 +392,19 @@ transform: rotate(90deg) scale(1.1);
   color: var(--text-secondary);
 }
 
+/* === SCROLL FIJO DENTRO DEL MODAL === */
+
+.about-overlay {
+  overflow-y: auto;
+}
+
+.about-panel {
+  max-height: 85vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+
 @media (max-width: 768px) {
     .nav-menu {
         position: fixed;
@@ -472,7 +485,6 @@ transform: rotate(90deg);
     gap: 20px;
   }
   .about-overlay {
-    position: fixed;
     inset: 0;
     display: flex;
     justify-content: center;
