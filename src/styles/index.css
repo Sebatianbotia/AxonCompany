@@ -489,7 +489,7 @@ transform: rotate(90deg);
     display: flex;
     justify-content: center;
     align-items: flex-start;     /* <- mueve el modal hacia ABAJO */
-    padding-top: 90px !important; /* <- espacio suficiente para la barra */
+    padding-top: 30px !important; /* <- espacio suficiente para la barra */
     z-index: 9999;
   }
 
