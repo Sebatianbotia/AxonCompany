@@ -449,7 +449,8 @@ transform: rotate(90deg);
     padding: 30px 20px;
     width: 92%;
     max-width: 92%;
-    max-height: fit-content;
+    margin-top: 8%;
+
   }
 
   .about-title {
